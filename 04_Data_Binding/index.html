@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vue Basics - Data Binding</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<!-- <script src="https://unpkg.com/vue@next" defer></script> -->
+         <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+
+		<script src="./app.js" defer></script>
+	</head>
+
+
+	<body>
+		<header>
+			<h1>Vue Data Binding</h1>
+		</header>
+
+		<section id="events">
+
+            <form v-on:submit.prevent="submitForm">
+                <div>
+					<label for="name">Name: {{name}}</label>
+					<input type="text" id="name" v-model="name">
+				</div>
+                <div>
+					<label for="email">Email Address: {{email}}</label>
+					<input type="emial" id="email" v-model="email">
+				</div>
+                <div>
+					<label for="phone">Phone number:{{phone}}</label>
+					<input type="tel" id="phone" v-model="phone">
+				</div>
+                <div>
+					<label for="address">Address: {{address}}</label>
+					<input type="text" id="address" v-model="address">
+				</div>
+				<div>
+					<button type="submit">Submit</button>
+					<button type="reset">Reset</button>
+				</div>
+				<div>
+					<label for="name">lastName: {{lastName}}</label>
+					<input type="text" id="name" :value="lastName" @input="getLastName">
+				</div>
+				<div>
+					<label for="name">middleName: {{middleName}}</label>
+					<input type="text" id="name" :value="middleName" @input="getMiddleName">
+				</div>
+				<div>
+					<label for="name">carName: {{carName}}</label>
+					<input type="text" id="name" :value="carName" @input="getCarName">
+				</div>
+            </form>
+			
+		</section>
+	</body>
+</html>

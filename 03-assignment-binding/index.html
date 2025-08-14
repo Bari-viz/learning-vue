@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vue Basics</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<!-- <script src="https://unpkg.com/vue@next" defer></script> -->
+         <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+
+		<script src="./app.js" defer></script>
+	</head>
+
+
+	<body>
+		<header>
+			<h1>Vue Events</h1>
+		</header>
+
+		<section id="events">
+			<h2>Event Practice</h2>
+
+			<button @click="showAlert">Show Alert 1</button>
+            <hr>
+
+			<div>
+                <small>My Second input</small>
+                <input label="My First Input" type="text" @keydown="saveInput">
+            </div>
+            <p>{{ userInput}}</p>
+	
+			<div>
+                <small>My Second Input: </small>
+                <input  type="text" @keydown="confirmInput">
+            </div>
+            <p>{{   confirmedInput }}</p>
+	
+
+			
+		</section>
+	</body>
+</html>

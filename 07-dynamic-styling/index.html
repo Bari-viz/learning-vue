@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vue Dynamic styling</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<!-- <script src="https://unpkg.com/vue@next" defer></script> -->
+         <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+
+		<script src="./app.js" defer></script>
+	</head>
+
+
+	<body>
+		<header>
+            <h1>Vue Dynamic Styling</h1>
+		</header>
+
+
+        <section id="Styling">
+            <div class="demo" 
+            :class= "boxAClasses" 
+            @click="boxSelected('A')"></div>
+            <div  
+             :class= "['demo', {active: boxBSelected}]" 
+               @click="boxSelected('B')"></div>
+            <div class="demo" :class= "{active: boxCSelected}"  @click="boxSelected('C')"></div>
+
+        </section>
+  
+
+
+
+			<!-- <button
+				@click="reduce(1)"
+				@click.right="reduce(2)"
+				title="trying smthn out"
+			>
+				Subtract
+			</button>
+
+			<p v-once>Starting counter value: {{ counter }}</p>
+            <p v-once>Starting Counter: {{ counter }}</p>
+			<p>Result: {{ counter }}</p>
+            <input title="input" type="text" v-on:input="setName($event, 'Vizor')">
+            <p>Your Name: {{ name }}</p>
+            <form v-on:submit.prevent="submitForm">
+                <input type="text">
+                <button>Sign Up</button>
+            </form>
+			 -->
+		</section>
+	</body>
+</html>
