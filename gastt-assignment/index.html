@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics - Mood Tracker</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+
+    <!-- App Logic -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app" :style="{ backgroundColor: bgColor }" class="container">
+      <h1>Mood Tracker</h1>
+
+      <input
+  type="text"
+  v-model="mood"
+  placeholder="How are you feeling today?"
+/>
+
+<p :class="{ warning: !mood }">{{ moodMessage }}</p>
+
+
+      <button @click="resetMood">Reset</button>
+    </div>
+  </body>
+</html>

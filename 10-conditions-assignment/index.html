@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vue Basics - Data Binding</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<!-- <script src="https://unpkg.com/vue@next" defer></script> -->
+         <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+
+		<script src="./app.js" defer></script>
+	</head>
+
+
+	<body id="events">
+        <header>
+            <h1>Vue Lists and Conditional Content</h1>
+        </header>
+        <section>
+            <h2>Assignment</h2>
+
+            <input type="text" v-model="enteredValue">
+            <button @click="addTask">Add Task</button>
+            <ul v-if="taskListIsVisible">
+                <li v-for="task in tasks" :key="task">{{ task }}</li>
+            </ul>
+            <button @click="toggleTaskList">{{ buttonCaption }}</button>
+
+			<div>
+				<p>My name is <span v-show='showName'>Gbenga</span></p>
+				<button v-on:click="toggleShowName">Display Name</button>
+			</div>
+        </section>
+		<!-- <header>
+			<h1>Course Goals for  -{{name}}</h1>
+		</header>
+		<section>
+			<h2>My course goals</h2>
+			<input type="text" v-model="enteredGoalValue"/>
+			<button @click="addGoal">Add Goal</button>
+			<p v-if="goals.length === 0">
+				No goals have been added yet - please start adding some!
+			</p>
+			<ul v-else>
+				<li v-for="(goal, index) in goals" :key="goal" @click="removeGoal(index)"><p>{{ goal	}} - {{	index }}</p>
+				<input type="text" @click.stop>
+				</li>
+			</ul> -->
+			<!-- <ul>
+				<li v-for="num in 10">{{ num }}</li>
+			</ul> -->
+			<!-- <ul>
+				<li v-for="(value, key, index) in {name: 'BARI', age: 21}">{{ key }}: {{ value }} - {{ index }}</li>
+			</ul> -->
+			<!-- <div v-else-if="goals.length < 5">
+				<ul v-for="goal in goals" :key="goal">
+					<li>{{goal}}</li>
+				</ul>
+			</div>
+			<div v-else>
+				<p>Ah! You wan wound me? Too many goals!!</p> -->
+<!-- 
+				<p v-show="goals.length === 0">No goals have been added yet - please start adding some!</p>
+				<ul v-show="goals.length > 0"></ul> -->
+				<!-- if you have content that switches a lot between being visible and being hidden all the time then you can use v-show 
+				 but idealy use v-else
+				 v-for tells vue to repeat its list item for all the goals in goals like you can add goals and it will show.
+				 also v-for can be used as object well and that you can retrieve the value or the  value and the key  or value, key and 
+				 index if you needed that  -->
+
+			</div>
+		</section>
+	</body>
+</html>
